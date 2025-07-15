@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - DoeLivros</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+<body>
+    <div class="container">
+        <div class="logo">
+            </div>
+        <h2>DoeLivros</h2>
+        <h3>Faça Login</h3>
+
+        {# Exibe mensagens de feedback (flash messages) #}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+            <div class="form-group">
+                <input type="text" id="nome" name="nome" placeholder=" DIGITE SEU MELHOR E-MAIL" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="senha" name="senha" placeholder=" INSIRA SUA SENHA" required>
+            </div>
+            <button type="submit">ENTRAR</button>
+        </form>
+        <div class="link">
+            <a href="/recuperar-senha">Esqueceu sua senha?</a>
+        </div>
+        <p class="link-text">
+            Não possui uma conta? <a href="{{ url_for('cadastro') }}">Cadastre-se</a>
+        </p>
+    </div>
+</body>
+</html>

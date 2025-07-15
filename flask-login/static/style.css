@@ -1,0 +1,209 @@
+/* style.css */
+
+/* Cores e Fontes DoeLivros (Baseados no Figma) */
+:root {
+    --cor-fundo-principal: #EAFFBA; /* Verde claro do fundo (Figma) */
+    --cor-primaria: #4F38BF; /* Azul/Roxo principal da logo, título e botão (Figma) */
+    --cor-texto-secundario: #555555; /* Cinza para subtítulos e texto geral */
+    --cor-texto-link: #4F38BF; /* Cor do link "Login"/"Cadastre-se" (Figma) */
+    --cor-input-borda: #e0e0e0; /* Borda dos campos de entrada */
+    --cor-input-placeholder: #9e9e9e; /* Cor do texto placeholder */
+    --cor-sombra-suave: rgba(0, 0, 0, 0.1); /* Sombra para o container */
+
+    --fonte-principal: 'Inter', sans-serif; /* Ou apenas sans-serif */
+}
+
+body {
+    font-family: var(--fonte-principal);
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo-principal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333; /* Cor de texto geral padrão */
+}
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px var(--cor-sombra-suave);
+    width: 100%;
+    max-width: 400px; /* Largura máxima do cartão */
+    text-align: center;
+    box-sizing: border-box;
+}
+.logo { /* Estilo para a div que contém a logo */
+    margin-bottom: 20px; /* Espaço abaixo da logo */
+}
+.logo img {
+    width: 200px; /* **TAMANHO GLOBAL DA LOGO EM TODAS AS TELAS** */
+    height: auto;
+}
+h1, h2 { /* Título principal como "DoeLivros" (se ainda fosse visível) */
+    font-size: 32px;
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+h3 { /* Subtítulo como "Cadastre-se" ou "Faça Login" */
+    font-size: 18px;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 30px; /* Espaço abaixo do subtítulo */
+    font-weight: normal;
+}
+.form-group {
+    margin-bottom: 20px; /* Espaço entre os grupos de formulário */
+    text-align: left; /* Garante que os campos fiquem alinhados à esquerda dentro do grupo */
+}
+input::placeholder {
+    color: var(--cor-input-placeholder);
+    font-size: 16px;
+    letter-spacing: 0.5px; /* Pequeno espaçamento entre letras no placeholder */
+}
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px; /* Padding interno dos campos */
+    border: 1px solid var(--cor-input-borda);
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+    transition: border-color 0.3s ease;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: var(--cor-primaria); /* Cor da borda ao focar */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 56, 191, 0.25); /* Sombra de foco baseada na cor primária */
+}
+button {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--cor-primaria); /* Cor do botão principal (Figma) */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px; /* Espaço acima do botão */
+    text-transform: uppercase; /* Para o texto do botão em maiúsculas */
+}
+button:hover {
+    background-color: #3a2b96;
+    transform: translateY(-2px);
+}
+.flash {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-align: center;
+    font-size: 15px;
+    animation: fadeIn 0.5s ease-out; /* Animação simples para mensagens */
+}
+.flash.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.flash.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+.flash.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+.link-text {
+    margin-top: 25px; /* Espaço acima do texto do link */
+    font-size: 15px;
+    color: var(--cor-texto-secundario); /* Texto como "Já possui uma conta?" */
+    text-align: center;
+}
+.link-text a {
+    color: var(--cor-texto-link);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.link-text a:hover {
+    color: #3a2b96;
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.home-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px var(--cor-sombra-suave);
+    width: 100%;
+    max-width: 600px; /* Mais largo que o container de login/cadastro */
+    text-align: center;
+    box-sizing: border-box;
+    margin: 50px auto; /* Para centralizar se não usar flexbox no body */
+}
+
+.home-container h1 {
+    font-size: 30px;
+    color: var(--cor-primaria);
+    margin-bottom: 25px;
+}
+.home-container p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 25px;
+}
+.home-container .links {
+    margin-top: 30px;
+}
+.home-container .links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.home-container .links a:not(.logout-link) { /* Aplica ao link que não tem a classe logout-link */
+    background-color: var(--cor-primaria);
+}
+.home-container .links a:not(.logout-link):hover {
+    background-color: #3a2b96;
+    transform: translateY(-2px);
+}
+
+.home-container .logout-link {
+    background-color: #dc3545; /* Vermelho para o botão de sair */
+}
+.home-container .logout-link:hover {
+    background-color: #c82333;
+}
+
+.botao-voltar {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3f3fbb;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.botao-voltar:hover {
+  background-color: #2f2f99;
+}
