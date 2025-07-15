@@ -1,5 +1,5 @@
-Sistema de Cadastro com Flask-Login
-
+**Sistema de Cadastro com Flask-Login
+**
 O DoeLivros é uma aplicação web simples, desenvolvida com Python, Flask e Flask-Login, que permite o cadastro seguro de usuários em uma interface intuitiva inspirada em prototipação no Figma. A proposta simula o login em uma plataforma de doação de livros, com foco exclusivo na tela de cadastro.
 
 Este projeto demonstra na prática o uso de estruturas de dados, funções, condicionais, loops e a biblioteca Flask-Login para autenticação. Enquadra-se na área de Soluções Digitais com Impacto Social, sendo uma base sólida para evoluir em projetos de gestão de comunidade.
