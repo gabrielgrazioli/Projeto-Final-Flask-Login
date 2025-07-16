@@ -1,48 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - DoeLivros</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    </head>
+  <title>Cadastro - DoeLivros</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+</head>
 <body>
-    <div class="container">
-        <div class="logo">
-          <img src="{{ url_for('static', filename='images/logo-doelivros.png') }}" alt="Logo DoeLivros" style="width: 150px; margin-bottom: px;">
-            </div>
-        <h2>DoeLivros</h2>
-        <h3>Cadastre-se</h3>
+  <div class="container">
+    <!-- Logo -->
+    <img src="{{ url_for('static', filename='images/logo-doelivros.png') }}" alt="Logo DoeLivros" class="logo">
 
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                <ul class="flash">
-                    {% for category, message in messages %}
-                        <li class="{{ category }}">{{ message }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
+    <h1 class="titulo">DoeLivros</h1>
+    <p class="subtitulo">Cadastre-se</p>
 
-        <form method="POST">
-            <div class="form-group">
-                <label for="nome">E-mail:</label>
-                <input type="text" id="nome" name="nome" placeholder=" DIGITE SEU MELHOR E-MAIL" required>
-            </div>
-            <div class="form-group">
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" placeholder=" INSIRA SUA SENHA" required>
-            </div>
-            <div class="form-group">
-                <label for="senha2">Repita a Senha:</label>
-                <input type="password" id="senha2" name="senha2" required>
-            </div>
-            <button type="submit">CADASTRAR-SE</button>
-        </form>
+    <form method="POST">
+      <div class="campo">
+        <img src="{{ url_for('static', filename='images/icone-email.png') }}" alt="Email">
+        <input type="text" name="nome" placeholder="DIGITE SEU MELHOR E-MAIL" required>
+      </div>
 
-        <div class="link">
-            Já possui uma conta? <a href="{{ url_for('login_form') }}">Login</a>
+      <div class="campo">
+        <img src="{{ url_for('static', filename='images/icone-chave.png') }}" alt="Senha">
+        <input type="password" name="senha" placeholder="INSIRA SUA SENHA" required>
+      </div>
+
+      <div class="campo">
+        <img src="{{ url_for('static', filename='images/icone-chave.png') }}" alt="Repetir Senha">
+        <input type="password" name="senha2" placeholder="REPITA SUA SENHA" required>
+      </div>
+
+      <button type="submit">CADASTRAR-SE</button>
+    </form>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="mensagens">
+          {% for categoria, msg in messages %}
+            <div class="mensagem {{ categoria }}">{{ msg }}</div>
+          {% endfor %}
         </div>
+      {% endif %}
+    {% endwith %}
+
+    <div class="link">
+      Já possui uma conta? <a href="/login">Login!</a>
     </div>
+  </div>
 </body>
 </html>
