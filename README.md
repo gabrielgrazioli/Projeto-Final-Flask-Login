@@ -6,12 +6,19 @@ Este projeto demonstra na prática o uso de estruturas de dados, funções, cond
 
 Funcionalidades:
 Cadastro de Usuário: Registra nome e senha com validações básicas.
+
 Senha Segura: As senhas são armazenadas com criptografia (hash).
+
 Login de Usuário: Autentica com verificação de credenciais.
+
 Logout Seguro: Encerra sessão de forma protegida.
+
 Persistência Simulada: Os dados dos usuários ficam armazenados em memória para fins didáticos.
+
 Interface Visual Personalizada: Tela de cadastro construída com base em um layout no Figma.
+
 Mensagens Flash: Informa o usuário sobre erros e sucessos com feedback visual.
+
 
 Tecnologias Utilizadas:
 Python 3.13
