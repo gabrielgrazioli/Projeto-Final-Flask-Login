@@ -5,6 +5,7 @@ O DoeLivros é uma aplicação web simples, desenvolvida com Python, Flask e Fla
 Este projeto demonstra na prática o uso de estruturas de dados, funções, condicionais, loops e a biblioteca Flask-Login para autenticação. Enquadra-se na área de Soluções Digitais com Impacto Social, sendo uma base sólida para evoluir em projetos de gestão de comunidade.
 
 Funcionalidades:
+
 Cadastro de Usuário: Registra nome e senha com validações básicas.
 
 Senha Segura: As senhas são armazenadas com criptografia (hash).
@@ -21,8 +22,13 @@ Mensagens Flash: Informa o usuário sobre erros e sucessos com feedback visual.
 
 
 Tecnologias Utilizadas:
+
 Python 3.13
+
 Flask – framework web minimalista
+
 Flask-Login – gerenciamento de sessões de usuários
+
 Werkzeug – para hash seguro de senhas
-HTML + CSS – estruturado com Jinja2, layout inspirado no
+
+HTML + CSS
